@@ -1,0 +1,512 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GCFT · FP251 dMRV demonstration</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef5f2;color:#193238;font:16px system-ui}header{background:#12343b;color:white;padding:3rem max(5vw,1rem)}header p{max-width:68ch;color:#d0e5df}h1,h2{font-family:Georgia;font-weight:normal}h1{font-size:clamp(2.1rem,5vw,4rem);margin:.45rem 0}h2{font-size:1.95rem;margin:0 0 .8rem}main,nav{max-width:1200px;margin:auto;padding:1rem}nav{display:flex;flex-wrap:wrap;gap:1rem}section{background:white;border:1px solid #d5e4de;border-radius:12px;padding:clamp(1rem,3vw,2rem);margin-bottom:1rem}a{color:#006259}button{font:inherit;font-weight:650;background:#075f57;color:white;border:0;border-radius:.45rem;padding:.65rem 1rem;margin:.3rem .3rem .3rem 0;cursor:pointer}button:disabled{background:#dbe8e4;color:#536665;cursor:default}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:.7rem}.tile,.note{background:#eaf4ef;padding:1rem;border-radius:8px}.tile strong{font-size:1.55rem;display:block}.note{border-left:4px solid #0e7667}p,li{line-height:1.55}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:.65rem;border-bottom:1px solid #dce7e2}th{background:#edf5f1}small{font-size:.85rem}output{display:block;min-height:1.6em}summary{cursor:pointer;font-weight:650;margin:.8rem 0}.eyebrow{letter-spacing:.08em;color:#b3ddd1;font-weight:650}@media print{nav,button,#lab,#outputs{display:none}section{break-inside:avoid}}
+</style>
+<header><small class="eyebrow">GCFT · BARBADOS WATER AUTHORITY · FP251</small><h1>From project document<br>to verified evidence</h1><p>South Coast Water Reclamation Project. Published financing, targets and progress through 24 November 2026, with a separate simulation of accounting and digital monitoring, reporting and verification.</p></header>
+<nav><a href="index.html">Evaluator overview</a><a href="#intake">Wizard</a><a href="#project">Project record</a><a href="#registry">Results registry</a><a href="#lab">Run dMRV</a><a href="#outputs">Export reports</a><a href="#evidence">Sources</a></nav>
+<main>
+<section id="intake"><h2>01 / Start at the wizard</h2><p><a href="https://gcftportal.org/wizard">Open GCFT’s live Budget Tagging Wizard</a>. Its four stages are Setup, Auto-Tag, Review &amp; Approve, and Publish. Use the project branch here to load the source-mapped FP251 dataset, then hold any activity-level climate or gender attribution until the applicable methodology and source evidence have been reviewed.</p><button id="load">Ingest FP251 public records</button><output id="intakeStatus" aria-live="polite"></output><p class="note">This standalone file ingests the embedded structured extract from the source documents. The live Barbados project record (da91d313) contains the public proposal, APR and safeguards links. The structured and simulated feeds in this file run locally.</p></section>
+<section id="project" hidden><h2>02 / Project and finance record</h2><div class="grid" id="cards"></div><div class="scroll" id="funding"></div><p>GCF’s 2025 report gives a dated aggregate receipt. BWA’s ledger, bank and direct-payment records are needed for an exact instrument allocation and expenditure reconciliation. The 2026 safeguards disclosure establishes publication of a document.</p><div class="scroll" id="milestones"></div></section>
+<section id="registry" hidden><h2>03 / Indicator registry</h2><p>The 2025 APR supplies reported results for that year. Final targets are separate from achieved results. The two beneficiary categories and overlapping land or emissions indicators are reported individually to avoid double counting.</p><details><summary>Open the public results registry</summary><div class="scroll" id="indicators"></div></details></section>
+<section id="lab" hidden><h2>04 / Simulate connected reporting</h2><p>Assumed connections deliver read-only Great Plains, financier, Microsoft Project, sensor and laboratory records. This exercise uses synthetic records, a synthetic cutoff and proposed demonstration rules. It cannot establish actual spending, water safety, compliance or physical completion.</p>
+<button id="sync">1. Sync sample feeds</button><button id="qa" disabled>2. Run quality checks</button><button id="review" disabled>3. Simulate reviewer decision</button><output id="labStatus" aria-live="polite"></output><div class="scroll" id="checks"></div></section>
+<section id="outputs" hidden><h2>05 / Generate reporting pack</h2><p>Public registers are available after intake. Exercise schedules, exceptions and report drafts unlock after the simulated review. Files are labelled for review, with public and synthetic records identifiable.</p><div id="downloads"></div><details id="reportPreview" hidden><summary>Read the generated report preview</summary><pre id="reportText" style="white-space:pre-wrap"></pre></details></section>
+<section id="evidence"><h2>Source documents and GCFT modules</h2><ul id="sourceLinks"></ul></section>
+</main>
+<script id="seed" type="application/json">{
+  "project": {
+    "id": "FP251",
+    "country": "BB",
+    "title": "Barbados Climate Resilient South Coast Water Reclamation Project",
+    "issuer": "Barbados Water Authority",
+    "accreditedEntity": "Inter-American Development Bank",
+    "theme": "Adaptation (GCF project classification)",
+    "plan": "2024 approved proposal + 2025 APR, public snapshot 24 Nov 2026"
+  },
+  "instruments": [
+    {
+      "id": "BA-L1063",
+      "name": "IDB loan",
+      "usd": 40000000,
+      "url": "https://www.iadb.org/en/project/BA-L1063"
+    },
+    {
+      "id": "BA-L1065",
+      "name": "GCF loan",
+      "usd": 30000000,
+      "url": "https://www.iadb.org/en/project/BA-L1065"
+    },
+    {
+      "id": "BA-G1008",
+      "name": "GCF grant",
+      "usd": 40000000,
+      "url": "https://www.iadb.org/en/project/BA-G1008"
+    }
+  ],
+  "disbursement": {
+    "usd": 2628000,
+    "date": "2025-12-23",
+    "scope": "GCF aggregate, instrument split unassigned",
+    "source": "APR",
+    "section": "A.5 / C.1",
+    "kind": "published receipt"
+  },
+  "milestones": [
+    {
+      "date": "2025-03-14",
+      "milestone": "Funded Activity Agreement effective",
+      "source": "APR",
+      "section": "C.1"
+    },
+    {
+      "date": "2025-09-03",
+      "milestone": "Conditions precedent to first disbursement fulfilled",
+      "source": "APR",
+      "section": "C.1"
+    },
+    {
+      "date": "2025-12-23",
+      "milestone": "First GCF disbursement received",
+      "source": "APR",
+      "section": "A.5 / C.1"
+    },
+    {
+      "date": "2026-11-20",
+      "milestone": "Final ESIA and ESMP disclosed by BWA; physical works status requires separate evidence",
+      "source": "BWA"
+    }
+  ],
+  "registry": [
+    {
+      "id": "Core 1",
+      "name": "GHG emissions reduced",
+      "unit": "tCO₂e",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 2657,
+      "source": "APR",
+      "page": 7,
+      "evidence": "Emissions methodology and PV/energy records"
+    },
+    {
+      "id": "Core 2a",
+      "name": "Direct beneficiaries",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 50707,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Verified survey and beneficiary register"
+    },
+    {
+      "id": "Core 2b",
+      "name": "Indirect beneficiaries",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 231293,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Approved population and overlap methodology"
+    },
+    {
+      "id": "Core 3",
+      "name": "Value of assets made more resilient",
+      "unit": "USD",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 68500000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Asset register and signed evidence of resilience improvements"
+    },
+    {
+      "id": "Core 4",
+      "name": "Area under improved management",
+      "unit": "ha",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 33,
+      "source": "APR",
+      "page": 7,
+      "evidence": "GIS boundaries and approved site records"
+    },
+    {
+      "id": "Supp 4.1",
+      "name": "Area under restoration or improvement",
+      "unit": "ha",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 33,
+      "source": "APR",
+      "page": 7,
+      "evidence": "GIS boundaries and approved site records"
+    },
+    {
+      "id": "Supp 2.1",
+      "name": "Adopting resilient livelihoods",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 706,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Verified survey and beneficiary register"
+    },
+    {
+      "id": "Supp 2.3",
+      "name": "Resilient water security",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 40,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Water service and survey evidence"
+    },
+    {
+      "id": "AQ",
+      "name": "Aquifer recharge reclaimed water",
+      "unit": "m³/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 440000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Flow meters at recharge wells; annual eligible volume"
+    },
+    {
+      "id": "IR",
+      "name": "Irrigation reclaimed water",
+      "unit": "m³/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 3940000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Farm and River Plantation flow meters; annual eligible volume"
+    },
+    {
+      "id": "STP",
+      "name": "Tertiary-standard treatment plants",
+      "unit": "plants",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Commissioning and supervising engineer certificate"
+    },
+    {
+      "id": "TOX",
+      "name": "Effluent toxicity lab reports meeting requirements",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Signed lab results; eligible tests passing / eligible tests"
+    },
+    {
+      "id": "PIPE",
+      "name": "Pipeline installed",
+      "unit": "km",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 25,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Certified chainage or as-built evidence"
+    },
+    {
+      "id": "FLOW",
+      "name": "Tertiary water available per day",
+      "unit": "m³/day",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 12000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "SCWRRF flow meters and linked laboratory evidence"
+    },
+    {
+      "id": "NHCA-D",
+      "name": "NHCA plans developed",
+      "unit": "plans",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Approved plan and project report"
+    },
+    {
+      "id": "NHCA-I",
+      "name": "NHCA plans implemented",
+      "unit": "plans",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Implementation records and project report"
+    },
+    {
+      "id": "RE",
+      "name": "Electricity use offset by renewable energy",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Metered net renewable generation and consumption"
+    },
+    {
+      "id": "AQUA",
+      "name": "AquaRating implementations",
+      "unit": "systems",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "BWA operational acceptance evidence"
+    },
+    {
+      "id": "MRV",
+      "name": "Monitoring system implemented",
+      "unit": "systems",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "BWA commissioning and acceptance record"
+    },
+    {
+      "id": "CAM",
+      "name": "Awareness and engagement campaigns delivered",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Campaign register and completion evidence"
+    },
+    {
+      "id": "TR-OP",
+      "name": "SCWRRF operations personnel trained",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 50,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Training completion register, disaggregated by sex"
+    },
+    {
+      "id": "TR-G",
+      "name": "Gender sensitivity trainees",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 500,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Training completion register, disaggregated by sex"
+    },
+    {
+      "id": "TR-M",
+      "name": "Customized trainings developed or adopted",
+      "unit": "trainings",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 10,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved training repository"
+    },
+    {
+      "id": "REG",
+      "name": "Regulatory documents",
+      "unit": "documents",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 3,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved policy records"
+    },
+    {
+      "id": "PV",
+      "name": "PV capacity installed",
+      "unit": "MW",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 7,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Commissioning records"
+    },
+    {
+      "id": "PV-G",
+      "name": "PV generation",
+      "unit": "MWh/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 4088,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Generation meter records"
+    },
+    {
+      "id": "GHG-P",
+      "name": "Project-level CO₂ reduction",
+      "unit": "tCO₂",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 2657,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved baseline, grid factors and monitored generation"
+    },
+    {
+      "id": "EE",
+      "name": "Energy efficiency technologies installed",
+      "unit": "technologies",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Commissioning records"
+    },
+    {
+      "id": "ODOR",
+      "name": "Odour complaints per reporting year",
+      "unit": "complaints",
+      "baseline": null,
+      "annual2025": 0,
+      "final": 0,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Grievance log; baseline TBD in APR"
+    },
+    {
+      "id": "WQ",
+      "name": "Water-quality analyses meeting discharge requirements",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Signed BOD/COD/DO lab records and applicable criteria"
+    },
+    {
+      "id": "SEA",
+      "name": "Wastewater discharged to marine environment",
+      "unit": "million m³",
+      "baseline": 2.2,
+      "annual2025": 0,
+      "final": "<0.11",
+      "source": "APR",
+      "page": 10,
+      "evidence": "Marine-outfall meter; APR baseline 2.2 million m³"
+    }
+  ],
+  "sources": {
+    "FP": {
+      "title": "Approved GCF funding proposal · 26 Nov 2024",
+      "url": "https://www.greenclimate.fund/sites/default/files/document/fp251.pdf",
+      "sha256": "5891a0ff9be25516debf367dd502dcf03677bb95bd13e0e9e605b8e78de07931"
+    },
+    "APR": {
+      "title": "GCF 2025 Annual Performance Report · cover date 15 Jul 2026 · subject to GCF review",
+      "url": "https://www.greenclimate.fund/sites/default/files/documents/2026-10/gcf-fp251-apr-2025-v2-disclosable-attachment.pdf",
+      "sha256": "e7b9950b463b615b7061e435f7a3517f1aa0b958cb52bee1b2f817e721190850"
+    },
+    "BWA": {
+      "title": "BWA safeguards disclosure · 20 Nov 2026",
+      "url": "https://barbadoswaterauthority.com/the-environmental-and-social-impact-assessment-and-environmental-and-social-management-plan-for-the-upgrading-of-the-existing-south-coast-sewage-treatment-plant-construction-of-the-new-south/"
+    },
+    "TOR44": {
+      "title": "BWA Output 4.4 public REOI (MRV)",
+      "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-MRV.pdf"
+    },
+    "TOR45": {
+      "title": "BWA Output 4.5 public REOI (project planning and monitoring)",
+      "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-Project-Planning-Management-Monitoring-Platform.pdf"
+    },
+    "IDB": {
+      "title": "IDB project register (BA-L1063)",
+      "url": "https://www.iadb.org/en/project/BA-L1063"
+    }
+  }
+}</script>
+<script>
+'use strict';
+const d=JSON.parse(document.getElementById('seed').textContent);
+const e=id=>document.getElementById(id), fmt=v=>typeof v==='number'?v.toLocaleString('en-US'):v??'Pending';
+const samples=[
+ ['GP-1','Finance','Great Plains paid voucher and bank entry',12000,12000,'USD','Finance reviewer'],
+ ['GP-2','Finance','Bank-to-financier receipt comparison',11750,12000,'USD','Finance reviewer'],
+ ['GP-3','Finance','Supplier direct payment with linked voucher',8000,8000,'USD','Finance reviewer'],
+ ['MS-1','Schedule','Simulated baseline 17 Nov and actual 20 Nov',20,17,'day of Nov','Project engineer'],
+ ['FLOW-1','Water quantity','Registered sensor interval at outlet',40,null,'m³','M&E verifier'],
+ ['FLOW-2','Water quantity','Duplicate sensor record FLOW-1',40,null,'m³','M&E verifier'],
+ ['FLOW-3','Water quantity','Missing calibration record',36,null,'m³','M&E verifier'],
+ ['LAB-1','Water quality','Lab result awaiting chain of custody',7,null,'pH','Lab verifier'],
+ ['SOIL-1','Soil quality','Synthetic lab record with linked custody',1,null,'dS/m','Lab verifier'],
+ ['WX-1','Climate','Rain gauge interval with registry and calibration references',4,null,'mm','M&E verifier']];
+const reasons=['Matched payment evidence','US$250 receipt difference','Direct payment, excluded from bank receipts','3 days after synthetic baseline','Eligible interval volume only','Duplicate quarantined','Quarantined: calibration evidence missing','Held: chain of custody missing','Evidence accepted for exercise; applicable thresholds needed for compliance','Accepted as climate context; no attribution inferred'];
+let log=[], staged=[];
+function node(tag,text){const x=document.createElement(tag);if(text!==undefined)x.textContent=text;return x;}
+function table(id,cols,rows){const t=node('table'),h=t.createTHead().insertRow(),b=t.createTBody();for(const c of cols)h.append(node('th',c));for(const r of rows){const tr=b.insertRow();for(const val of r)tr.append(node('td',fmt(val)));}e(id).replaceChildren(t);}
+function record(event,actor){log.push({event,actor,time:new Date().toISOString(),environment:'local demonstration'});}
+function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type})),a=node('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);}
+function csv(rows){return rows.map(r=>r.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(',')).join('\r\n');}
+const csvOut=(file,rows)=>download(file,csv(rows),'text/csv;charset=utf-8');
+function button(label,fn){const b=node('button',label);b.onclick=fn;e('downloads').append(b);}
+const registryRows=()=>[['ID','Indicator','Unit','Baseline','2025 reported','Final target','Source','Page','Proposed evidence'],...d.registry.map(x=>[x.id,x.name,x.unit,x.baseline,x.annual2025,x.final,x.source,x.page,x.evidence])];
+const fundRows=()=>[['Instrument','Name','Approved USD','Source'],...d.instruments.map(x=>[x.id,x.name,x.usd,x.url])];
+const mileRows=()=>[['Date','Milestone','Source','Section'],...d.milestones.map(x=>[x.date,x.milestone,x.source,x.section])];
+function report(){
+ return 'FP251 | Draft management / IDB PMR and GCF APR support\n\nPUBLIC RECORDS\nApproved financing: US$110,000,000. GCF aggregate first receipt: US$2,628,000 on 23 Dec 2025 (2025 APR A.5 / C.1). Instrument split and BWA actual spending remain unverified.\n2025 reported values for pipeline, irrigation, recharge and tertiary water availability: 0 for the reporting year. See the results register for targets and sources.\nBWA published the final safeguards assessment and management plan on 20 Nov 2026.\n\nSIMULATED OPERATING PERIOD\nMatched own-bank voucher expenditure: US$12,000. Documented direct supplier payment: US$8,000, separately identified. Receipt variance: US$250 pending. One eligible 40 m³ interval; no daily or annual claim. Sample schedule variance: 3 days. Soil/climate records provide context; water-quality exception remains open.\n\nRELEASE STATUS\nDraft only. BWA finance, engineering and designated independent verification must approve official results using the current signed Results Matrix, Indicator Registry, M&E Plan, and donor templates.\n';
+}
+for(const s of Object.values(d.sources)){const l=node('li'),a=node('a',s.title);a.href=s.url;l.append(a);e('sourceLinks').append(l);}
+e('load').onclick=()=>{
+ if(d.instruments.reduce((a,x)=>a+x.usd,0)!==110000000||new Set(d.instruments.map(x=>x.id)).size!==3){e('intakeStatus').textContent='Source controls failed.';return;}
+ record('Public FP251 extract loaded; 3 unique instruments reconcile to published control total','Intake operator');
+ for(const id of ['project','registry','lab','outputs'])e(id).hidden=false;
+ e('load').disabled=true;e('intakeStatus').textContent='FP251 loaded · 3 financing instruments · '+d.registry.length+' indicator rows · '+d.milestones.length+' milestones.';
+ for(const [value,label] of [['US$110M','Approved project financing'],['US$2.628M','First GCF receipt · 23 December 2025'],['Pending','Verified BWA expenditure'],['25 km','Final installation target · 2025 APR']]){const a=node('div');a.className='tile';a.append(node('strong',value),label);e('cards').append(a);}
+ table('funding',['Operation','Instrument','Approved US$'],d.instruments.map(x=>[x.id,x.name,x.usd]));
+ table('milestones',['Date','Public milestone','Source'],d.milestones.map(x=>[x.date,x.milestone,x.source]));
+ table('indicators',['ID','Indicator','Unit','Baseline','2025 reported','Final target','APR page','Proposed evidence'],d.registry.map(x=>[x.id,x.name,x.unit,x.baseline,x.annual2025,x.final,x.page,x.evidence]));
+ button('Public project JSON',()=>download('FP251_public_project.json',JSON.stringify(d,null,2),'application/json'));
+ button('Financing CSV',()=>csvOut('FP251_funding.csv',fundRows()));
+ button('Results registry CSV',()=>csvOut('FP251_results.csv',registryRows()));
+ button('Milestones CSV',()=>csvOut('FP251_milestones.csv',mileRows()));
+};
+e('sync').onclick=()=>{staged=samples.map(x=>[...x]);record('Ten synthetic records staged','Connector operator');e('sync').disabled=true;e('qa').disabled=false;e('labStatus').textContent='Ten synthetic records staged from assumed connections.';table('checks',['Record','Feed','Evidence description','Observed','Comparison','Unit','Review owner'],staged);};
+e('qa').onclick=()=>{
+ const seen=new Set();let exceptions=0;
+ staged=staged.map((r,i)=>{let finding=reasons[i];if(r[0]==='FLOW-1')seen.add(r[0]);if(r[0]==='FLOW-2'&&seen.has('FLOW-1'))finding='Duplicate quarantined';if(r[0]==='GP-2')finding='US$'+(r[4]-r[3])+' receipt difference';if([1,5,6,7].includes(i))exceptions++;return [...r,finding];});
+ table('checks',['Record','Feed','Evidence description','Observed','Comparison','Unit','Review owner','Quality finding'],staged);
+ record(exceptions+' exceptions raised; schedule variance retained','Quality gate');e('labStatus').textContent=exceptions+' sample exceptions require follow-up. No missing data has been converted to zero.';e('qa').disabled=true;e('review').disabled=false;
+};
+e('review').onclick=()=>{
+ record('Sample finance and engineering reviews complete for eligible records; exceptions remain open','Simulated independent reviewers');
+ e('review').disabled=true;e('labStatus').textContent='Exercise review complete. Four exceptions remain open and the report is a draft.';
+ e('reportPreview').hidden=false;e('reportText').textContent=report();
+ button('Draft reporting pack',()=>download('FP251_PM_and_APR_Draft.txt',report(),'text/plain;charset=utf-8'));
+ button('Reconciliation and QA CSV',()=>csvOut('FP251_synthetic_qa.csv',[['Record','Feed','Evidence','Observed','Comparison','Unit','Owner','Finding'],...staged]));
+ button('Exception register CSV',()=>csvOut('FP251_open_exceptions.csv',[['Record','Feed','Evidence','Observed','Comparison','Unit','Owner','Finding'],...[1,5,6,7].map(i=>staged[i])]));
+ button('Sample audit events JSON',()=>download('FP251_sample_audit.json',JSON.stringify(log,null,2),'application/json'));
+};
+</script></html>

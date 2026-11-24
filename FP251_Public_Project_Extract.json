@@ -1,0 +1,435 @@
+{
+  "project": {
+    "id": "FP251",
+    "country": "BB",
+    "title": "Barbados Climate Resilient South Coast Water Reclamation Project",
+    "issuer": "Barbados Water Authority",
+    "accreditedEntity": "Inter-American Development Bank",
+    "theme": "Adaptation (GCF project classification)",
+    "plan": "2024 approved proposal + 2025 APR, public snapshot 24 Nov 2026"
+  },
+  "instruments": [
+    {
+      "id": "BA-L1063",
+      "name": "IDB loan",
+      "usd": 40000000,
+      "url": "https://www.iadb.org/en/project/BA-L1063"
+    },
+    {
+      "id": "BA-L1065",
+      "name": "GCF loan",
+      "usd": 30000000,
+      "url": "https://www.iadb.org/en/project/BA-L1065"
+    },
+    {
+      "id": "BA-G1008",
+      "name": "GCF grant",
+      "usd": 40000000,
+      "url": "https://www.iadb.org/en/project/BA-G1008"
+    }
+  ],
+  "disbursement": {
+    "usd": 2628000,
+    "date": "2025-12-23",
+    "scope": "GCF aggregate, instrument split unassigned",
+    "source": "APR",
+    "section": "A.5 / C.1",
+    "kind": "published receipt"
+  },
+  "milestones": [
+    {
+      "date": "2025-03-14",
+      "milestone": "Funded Activity Agreement effective",
+      "source": "APR",
+      "section": "C.1"
+    },
+    {
+      "date": "2025-09-03",
+      "milestone": "Conditions precedent to first disbursement fulfilled",
+      "source": "APR",
+      "section": "C.1"
+    },
+    {
+      "date": "2025-12-23",
+      "milestone": "First GCF disbursement received",
+      "source": "APR",
+      "section": "A.5 / C.1"
+    },
+    {
+      "date": "2026-11-20",
+      "milestone": "Final ESIA and ESMP disclosed by BWA; physical works status requires separate evidence",
+      "source": "BWA"
+    }
+  ],
+  "registry": [
+    {
+      "id": "Core 1",
+      "name": "GHG emissions reduced",
+      "unit": "tCO₂e",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 2657,
+      "source": "APR",
+      "page": 7,
+      "evidence": "Emissions methodology and PV/energy records"
+    },
+    {
+      "id": "Core 2a",
+      "name": "Direct beneficiaries",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 50707,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Verified survey and beneficiary register"
+    },
+    {
+      "id": "Core 2b",
+      "name": "Indirect beneficiaries",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 231293,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Approved population and overlap methodology"
+    },
+    {
+      "id": "Core 3",
+      "name": "Value of assets made more resilient",
+      "unit": "USD",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 68500000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Asset register and signed evidence of resilience improvements"
+    },
+    {
+      "id": "Core 4",
+      "name": "Area under improved management",
+      "unit": "ha",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 33,
+      "source": "APR",
+      "page": 7,
+      "evidence": "GIS boundaries and approved site records"
+    },
+    {
+      "id": "Supp 4.1",
+      "name": "Area under restoration or improvement",
+      "unit": "ha",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 33,
+      "source": "APR",
+      "page": 7,
+      "evidence": "GIS boundaries and approved site records"
+    },
+    {
+      "id": "Supp 2.1",
+      "name": "Adopting resilient livelihoods",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 706,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Verified survey and beneficiary register"
+    },
+    {
+      "id": "Supp 2.3",
+      "name": "Resilient water security",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 40,
+      "source": "APR",
+      "page": 8,
+      "evidence": "Water service and survey evidence"
+    },
+    {
+      "id": "AQ",
+      "name": "Aquifer recharge reclaimed water",
+      "unit": "m³/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 440000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Flow meters at recharge wells; annual eligible volume"
+    },
+    {
+      "id": "IR",
+      "name": "Irrigation reclaimed water",
+      "unit": "m³/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 3940000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Farm and River Plantation flow meters; annual eligible volume"
+    },
+    {
+      "id": "STP",
+      "name": "Tertiary-standard treatment plants",
+      "unit": "plants",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Commissioning and supervising engineer certificate"
+    },
+    {
+      "id": "TOX",
+      "name": "Effluent toxicity lab reports meeting requirements",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Signed lab results; eligible tests passing / eligible tests"
+    },
+    {
+      "id": "PIPE",
+      "name": "Pipeline installed",
+      "unit": "km",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 25,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Certified chainage or as-built evidence"
+    },
+    {
+      "id": "FLOW",
+      "name": "Tertiary water available per day",
+      "unit": "m³/day",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 12000,
+      "source": "APR",
+      "page": 9,
+      "evidence": "SCWRRF flow meters and linked laboratory evidence"
+    },
+    {
+      "id": "NHCA-D",
+      "name": "NHCA plans developed",
+      "unit": "plans",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Approved plan and project report"
+    },
+    {
+      "id": "NHCA-I",
+      "name": "NHCA plans implemented",
+      "unit": "plans",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Implementation records and project report"
+    },
+    {
+      "id": "RE",
+      "name": "Electricity use offset by renewable energy",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Metered net renewable generation and consumption"
+    },
+    {
+      "id": "AQUA",
+      "name": "AquaRating implementations",
+      "unit": "systems",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "BWA operational acceptance evidence"
+    },
+    {
+      "id": "MRV",
+      "name": "Monitoring system implemented",
+      "unit": "systems",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 9,
+      "evidence": "BWA commissioning and acceptance record"
+    },
+    {
+      "id": "CAM",
+      "name": "Awareness and engagement campaigns delivered",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 9,
+      "evidence": "Campaign register and completion evidence"
+    },
+    {
+      "id": "TR-OP",
+      "name": "SCWRRF operations personnel trained",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 50,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Training completion register, disaggregated by sex"
+    },
+    {
+      "id": "TR-G",
+      "name": "Gender sensitivity trainees",
+      "unit": "people",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 500,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Training completion register, disaggregated by sex"
+    },
+    {
+      "id": "TR-M",
+      "name": "Customized trainings developed or adopted",
+      "unit": "trainings",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 10,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved training repository"
+    },
+    {
+      "id": "REG",
+      "name": "Regulatory documents",
+      "unit": "documents",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 3,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved policy records"
+    },
+    {
+      "id": "PV",
+      "name": "PV capacity installed",
+      "unit": "MW",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 7,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Commissioning records"
+    },
+    {
+      "id": "PV-G",
+      "name": "PV generation",
+      "unit": "MWh/year",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 4088,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Generation meter records"
+    },
+    {
+      "id": "GHG-P",
+      "name": "Project-level CO₂ reduction",
+      "unit": "tCO₂",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 2657,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Approved baseline, grid factors and monitored generation"
+    },
+    {
+      "id": "EE",
+      "name": "Energy efficiency technologies installed",
+      "unit": "technologies",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 1,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Commissioning records"
+    },
+    {
+      "id": "ODOR",
+      "name": "Odour complaints per reporting year",
+      "unit": "complaints",
+      "baseline": null,
+      "annual2025": 0,
+      "final": 0,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Grievance log; baseline TBD in APR"
+    },
+    {
+      "id": "WQ",
+      "name": "Water-quality analyses meeting discharge requirements",
+      "unit": "%",
+      "baseline": 0,
+      "annual2025": 0,
+      "final": 100,
+      "source": "APR",
+      "page": 10,
+      "evidence": "Signed BOD/COD/DO lab records and applicable criteria"
+    },
+    {
+      "id": "SEA",
+      "name": "Wastewater discharged to marine environment",
+      "unit": "million m³",
+      "baseline": 2.2,
+      "annual2025": 0,
+      "final": "<0.11",
+      "source": "APR",
+      "page": 10,
+      "evidence": "Marine-outfall meter; APR baseline 2.2 million m³"
+    }
+  ],
+  "sources": {
+    "FP": {
+      "title": "Approved GCF funding proposal · 26 Nov 2024",
+      "url": "https://www.greenclimate.fund/sites/default/files/document/fp251.pdf",
+      "sha256": "5891a0ff9be25516debf367dd502dcf03677bb95bd13e0e9e605b8e78de07931"
+    },
+    "APR": {
+      "title": "GCF 2025 Annual Performance Report · cover date 15 Jul 2026 · subject to GCF review",
+      "url": "https://www.greenclimate.fund/sites/default/files/documents/2026-10/gcf-fp251-apr-2025-v2-disclosable-attachment.pdf",
+      "sha256": "e7b9950b463b615b7061e435f7a3517f1aa0b958cb52bee1b2f817e721190850"
+    },
+    "BWA": {
+      "title": "BWA safeguards disclosure · 20 Nov 2026",
+      "url": "https://barbadoswaterauthority.com/the-environmental-and-social-impact-assessment-and-environmental-and-social-management-plan-for-the-upgrading-of-the-existing-south-coast-sewage-treatment-plant-construction-of-the-new-south/"
+    },
+    "TOR44": {
+      "title": "BWA Output 4.4 public REOI (MRV)",
+      "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-MRV.pdf"
+    },
+    "TOR45": {
+      "title": "BWA Output 4.5 public REOI (project planning and monitoring)",
+      "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-Project-Planning-Management-Monitoring-Platform.pdf"
+    },
+    "IDB": {
+      "title": "IDB project register (BA-L1063)",
+      "url": "https://www.iadb.org/en/project/BA-L1063"
+    }
+  }
+}
