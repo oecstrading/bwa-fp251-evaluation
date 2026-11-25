@@ -13,19 +13,30 @@
 <a href="./">FP251 evaluation home</a>
 <p class="tag">BWA-IDBCS005 · BA-L1063 · OUTPUT 4.4</p>
 <h1>Monitoring, Reporting and Verification</h1>
-<p>GCFT proof of concept for the Barbados Climate Resilient South Coast Water Reclamation Project. Follow a field observation through quality checks, independent review and a proposed Output 4.5 handoff.</p>
+<p>Evaluate the existing GCFT platform against Barbados Water Authority’s South Coast Water Reclamation Project. Load the published FP251 record, run the Output 4.4 workflow and inspect the reporting pack and proposed Output 4.5 exchange.</p>
 </div></header>
 <main class="wrap">
+<section class="panel" aria-labelledby="project">
+<h2 id="project">Load BWA’s FP251 project</h2>
+<p>GCFT is available for evaluation now. The proposed BWA rollout uses the existing platform, with project-specific configuration, authorized source connections, user testing and training. This public workspace runs locally in your browser. It pairs the published FP251 register with clearly labelled test observations.</p>
+<p><a href="https://gcftportal.org/dashboard">Open the GCFT platform</a> · <a href="GCFT_FP251_dMRV.html">Review the project and financing workflow</a> · <a href="https://www.greenclimate.fund/document/2025-annual-performance-report-fp251-barbados-climate-resilient-south-coast-water-reclamation-project-scwrp">2025 Annual Performance Report</a></p>
+<button id="load-project" type="button">Load published FP251 project data</button>
+<p id="project-summary" role="status"></p>
+<details id="registry-panel" hidden>
+<summary>Inspect the imported FP251 indicator registry</summary>
+<div class="scroll" tabindex="0" aria-label="FP251 registry"><table><thead><tr><th scope="col">Indicator</th><th scope="col">2025 reported</th><th scope="col">Final target</th><th scope="col">Evidence mapping</th><th scope="col">Source</th></tr></thead><tbody id="registry"></tbody></table></div>
+</details>
+</section>
 <section class="panel" aria-labelledby="demo">
 <h2 id="demo">Run the verification workflow</h2>
-<p>Sample observations, limits, identities and indicator codes are illustrative. This browser demonstration simulates role separation, evidence review and export. Production controls, approved indicator rules and integration would be validated with BWA.</p>
+<p>Published targets and reported values come from the FP251 extract. Test observations and role decisions are illustrative. BWA’s approved rules and source permissions would govern live validation and independent sign-off.</p>
 <label for="sample">Sample record</label>
 <select id="sample">
-<option value="quality">Water quality · laboratory result</option>
-<option value="quantity">Water quantity · reconciled meter readings</option>
+<option value="quality">Water quality · FP251 discharge quality</option>
+<option value="quantity">Water quantity · FP251 tertiary water availability</option>
 <option value="soil">Soil quality · missing custody evidence</option>
 <option value="climate">Climate · incomplete station series</option>
-<option value="commitment">Water Resilience Commitment · independent sign-off</option>
+<option value="commitment">Water Resilience Commitment · aquifer recharge scenario</option>
 </select>
 <dl id="record"></dl>
 <p class="status" id="status" role="status"></p>
@@ -37,6 +48,10 @@
 <button id="reset" type="button">Reset</button>
 </div>
 <h3>Decision log</h3><ol id="log"></ol>
+<h3>FP251 reporting and verification pack</h3>
+<p>Run several scenarios to populate the pack. Returned and pending observations remain in the exception register. Only observations that have completed their review path enter the proposed Output 4.5 exchange.</p>
+<p id="pack-summary" role="status"></p>
+<button id="pack-export" type="button">Download FP251 reporting pack</button>
 <noscript><p>Enable JavaScript to run the verification workflow.</p></noscript>
 </section>
 <section class="panel">
@@ -61,17 +76,48 @@
 </ul>
 </section>
 </main>
+<script id="fp251-data" type="application/json">{"project": {"id": "FP251", "country": "BB", "title": "Barbados Climate Resilient South Coast Water Reclamation Project", "issuer": "Barbados Water Authority", "accreditedEntity": "Inter-American Development Bank", "theme": "Adaptation (GCF project classification)", "plan": "2024 approved proposal + 2025 APR, public snapshot 24 Nov 2026"}, "instruments": [{"id": "BA-L1063", "name": "IDB loan", "usd": 40000000, "url": "https://www.iadb.org/en/project/BA-L1063"}, {"id": "BA-L1065", "name": "GCF loan", "usd": 30000000, "url": "https://www.iadb.org/en/project/BA-L1065"}, {"id": "BA-G1008", "name": "GCF grant", "usd": 40000000, "url": "https://www.iadb.org/en/project/BA-G1008"}], "disbursement": {"usd": 2628000, "date": "2025-12-23", "scope": "GCF aggregate, instrument split unassigned", "source": "APR", "section": "A.5 / C.1", "kind": "published receipt"}, "milestones": [{"date": "2025-03-14", "milestone": "Funded Activity Agreement effective", "source": "APR", "section": "C.1"}, {"date": "2025-09-03", "milestone": "Conditions precedent to first disbursement fulfilled", "source": "APR", "section": "C.1"}, {"date": "2025-12-23", "milestone": "First GCF disbursement received", "source": "APR", "section": "A.5 / C.1"}, {"date": "2026-11-20", "milestone": "Final ESIA and ESMP disclosed by BWA; physical works status requires separate evidence", "source": "BWA"}], "registry": [{"id": "Core 1", "name": "GHG emissions reduced", "unit": "tCO₂e", "baseline": 0, "annual2025": 0, "final": 2657, "source": "APR", "page": 7, "evidence": "Emissions methodology and PV/energy records"}, {"id": "Core 2a", "name": "Direct beneficiaries", "unit": "people", "baseline": 0, "annual2025": 0, "final": 50707, "source": "APR", "page": 8, "evidence": "Verified survey and beneficiary register"}, {"id": "Core 2b", "name": "Indirect beneficiaries", "unit": "people", "baseline": 0, "annual2025": 0, "final": 231293, "source": "APR", "page": 8, "evidence": "Approved population and overlap methodology"}, {"id": "Core 3", "name": "Value of assets made more resilient", "unit": "USD", "baseline": 0, "annual2025": 0, "final": 68500000, "source": "APR", "page": 9, "evidence": "Asset register and signed evidence of resilience improvements"}, {"id": "Core 4", "name": "Area under improved management", "unit": "ha", "baseline": 0, "annual2025": 0, "final": 33, "source": "APR", "page": 7, "evidence": "GIS boundaries and approved site records"}, {"id": "Supp 4.1", "name": "Area under restoration or improvement", "unit": "ha", "baseline": 0, "annual2025": 0, "final": 33, "source": "APR", "page": 7, "evidence": "GIS boundaries and approved site records"}, {"id": "Supp 2.1", "name": "Adopting resilient livelihoods", "unit": "people", "baseline": 0, "annual2025": 0, "final": 706, "source": "APR", "page": 8, "evidence": "Verified survey and beneficiary register"}, {"id": "Supp 2.3", "name": "Resilient water security", "unit": "people", "baseline": 0, "annual2025": 0, "final": 40, "source": "APR", "page": 8, "evidence": "Water service and survey evidence"}, {"id": "AQ", "name": "Aquifer recharge reclaimed water", "unit": "m³/year", "baseline": 0, "annual2025": 0, "final": 440000, "source": "APR", "page": 9, "evidence": "Flow meters at recharge wells; annual eligible volume"}, {"id": "IR", "name": "Irrigation reclaimed water", "unit": "m³/year", "baseline": 0, "annual2025": 0, "final": 3940000, "source": "APR", "page": 9, "evidence": "Farm and River Plantation flow meters; annual eligible volume"}, {"id": "STP", "name": "Tertiary-standard treatment plants", "unit": "plants", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 9, "evidence": "Commissioning and supervising engineer certificate"}, {"id": "TOX", "name": "Effluent toxicity lab reports meeting requirements", "unit": "%", "baseline": 0, "annual2025": 0, "final": 100, "source": "APR", "page": 9, "evidence": "Signed lab results; eligible tests passing / eligible tests"}, {"id": "PIPE", "name": "Pipeline installed", "unit": "km", "baseline": 0, "annual2025": 0, "final": 25, "source": "APR", "page": 9, "evidence": "Certified chainage or as-built evidence"}, {"id": "FLOW", "name": "Tertiary water available per day", "unit": "m³/day", "baseline": 0, "annual2025": 0, "final": 12000, "source": "APR", "page": 9, "evidence": "SCWRRF flow meters and linked laboratory evidence"}, {"id": "NHCA-D", "name": "NHCA plans developed", "unit": "plans", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 9, "evidence": "Approved plan and project report"}, {"id": "NHCA-I", "name": "NHCA plans implemented", "unit": "plans", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 9, "evidence": "Implementation records and project report"}, {"id": "RE", "name": "Electricity use offset by renewable energy", "unit": "%", "baseline": 0, "annual2025": 0, "final": 100, "source": "APR", "page": 9, "evidence": "Metered net renewable generation and consumption"}, {"id": "AQUA", "name": "AquaRating implementations", "unit": "systems", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 9, "evidence": "BWA operational acceptance evidence"}, {"id": "MRV", "name": "Monitoring system implemented", "unit": "systems", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 9, "evidence": "BWA commissioning and acceptance record"}, {"id": "CAM", "name": "Awareness and engagement campaigns delivered", "unit": "%", "baseline": 0, "annual2025": 0, "final": 100, "source": "APR", "page": 9, "evidence": "Campaign register and completion evidence"}, {"id": "TR-OP", "name": "SCWRRF operations personnel trained", "unit": "people", "baseline": 0, "annual2025": 0, "final": 50, "source": "APR", "page": 10, "evidence": "Training completion register, disaggregated by sex"}, {"id": "TR-G", "name": "Gender sensitivity trainees", "unit": "people", "baseline": 0, "annual2025": 0, "final": 500, "source": "APR", "page": 10, "evidence": "Training completion register, disaggregated by sex"}, {"id": "TR-M", "name": "Customized trainings developed or adopted", "unit": "trainings", "baseline": 0, "annual2025": 0, "final": 10, "source": "APR", "page": 10, "evidence": "Approved training repository"}, {"id": "REG", "name": "Regulatory documents", "unit": "documents", "baseline": 0, "annual2025": 0, "final": 3, "source": "APR", "page": 10, "evidence": "Approved policy records"}, {"id": "PV", "name": "PV capacity installed", "unit": "MW", "baseline": 0, "annual2025": 0, "final": 7, "source": "APR", "page": 10, "evidence": "Commissioning records"}, {"id": "PV-G", "name": "PV generation", "unit": "MWh/year", "baseline": 0, "annual2025": 0, "final": 4088, "source": "APR", "page": 10, "evidence": "Generation meter records"}, {"id": "GHG-P", "name": "Project-level CO₂ reduction", "unit": "tCO₂", "baseline": 0, "annual2025": 0, "final": 2657, "source": "APR", "page": 10, "evidence": "Approved baseline, grid factors and monitored generation"}, {"id": "EE", "name": "Energy efficiency technologies installed", "unit": "technologies", "baseline": 0, "annual2025": 0, "final": 1, "source": "APR", "page": 10, "evidence": "Commissioning records"}, {"id": "ODOR", "name": "Odour complaints per reporting year", "unit": "complaints", "baseline": null, "annual2025": 0, "final": 0, "source": "APR", "page": 10, "evidence": "Grievance log; baseline TBD in APR"}, {"id": "WQ", "name": "Water-quality analyses meeting discharge requirements", "unit": "%", "baseline": 0, "annual2025": 0, "final": 100, "source": "APR", "page": 10, "evidence": "Signed BOD/COD/DO lab records and applicable criteria"}, {"id": "SEA", "name": "Wastewater discharged to marine environment", "unit": "million m³", "baseline": 2.2, "annual2025": 0, "final": "\u003c0.11", "source": "APR", "page": 10, "evidence": "Marine-outfall meter; APR baseline 2.2 million m³"}], "sources": {"FP": {"title": "Approved GCF funding proposal · 26 Nov 2024", "url": "https://www.greenclimate.fund/sites/default/files/document/fp251.pdf", "sha256": "5891a0ff9be25516debf367dd502dcf03677bb95bd13e0e9e605b8e78de07931"}, "APR": {"title": "GCF 2025 Annual Performance Report · cover date 15 Jul 2026 · subject to GCF review", "url": "https://www.greenclimate.fund/sites/default/files/documents/2026-10/gcf-fp251-apr-2025-v2-disclosable-attachment.pdf", "sha256": "e7b9950b463b615b7061e435f7a3517f1aa0b958cb52bee1b2f817e721190850"}, "BWA": {"title": "BWA safeguards disclosure · 20 Nov 2026", "url": "https://barbadoswaterauthority.com/the-environmental-and-social-impact-assessment-and-environmental-and-social-management-plan-for-the-upgrading-of-the-existing-south-coast-sewage-treatment-plant-construction-of-the-new-south/"}, "TOR44": {"title": "BWA Output 4.4 public REOI (MRV)", "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-MRV.pdf"}, "TOR45": {"title": "BWA Output 4.5 public REOI (project planning and monitoring)", "url": "https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-Project-Planning-Management-Monitoring-Platform.pdf"}, "IDB": {"title": "IDB project register (BA-L1063)", "url": "https://www.iadb.org/en/project/BA-L1063"}}}</script>
 <script>
 const samples = {
-  quality: {code:"DEMO-WQ", reading:"Turbidity 1.1 NTU", evidence:"LAB-DEMO-017 · signed laboratory result", tier:"Documentary validation", exception:""},
-  quantity: {code:"DEMO-VOL", reading:"Reclaimed water 1,240 m³/day", evidence:"METER-DEMO-024 · reconciled daily meter readings", tier:"Documentary validation", exception:""},
+  quality: {code:"DEMO-WQ", indicator:"WQ", reading:"9 of 10 analyses meet the example criteria (90%)", evidence:"LAB-DEMO-017 · sample BOD/COD/DO laboratory register", tier:"Documentary validation", exception:""},
+  quantity: {code:"DEMO-VOL", indicator:"FLOW", reading:"Tertiary water available 11,400 m³/day", evidence:"METER-DEMO-024 · reconciled daily meter readings", tier:"Documentary validation", exception:""},
   soil: {code:"DEMO-SOIL", reading:"Electrical conductivity 2.4 dS/m", evidence:"LAB-DEMO-031 · custody form missing", tier:"Documentary validation", exception:"Missing chain-of-custody form."},
   climate: {code:"DEMO-RAIN", reading:"Monthly rainfall 77 mm", evidence:"STATION-DEMO-042 · daily series", tier:"Documentary validation", exception:"Two required days are missing from the station series."},
-  commitment: {code:"DEMO-WRC", reading:"Pilot commissioning milestone recorded", evidence:"COMM-DEMO-053 · commissioning file and verifier checklist", tier:"Independent verification", exception:""}
+  commitment: {code:"DEMO-WRC", indicator:"AQ", reading:"Reclaimed water aquifer recharge scenario · 410,000 m³/year", evidence:"RECHARGE-DEMO-053 · sample metering and independent review checklist", tier:"Independent verification", exception:""}
 };
 const el = id => document.getElementById(id);
 let state;
 let decisions;
+let project;
+let registry;
+const observations = new Map();
+function addCell(row, value) {
+  const cell = document.createElement("td");
+  cell.textContent = value;
+  row.append(cell);
+  return cell;
+}
+function loadProject() {
+  project = JSON.parse(el("fp251-data").textContent);
+  registry = new Map(project.registry.map(item => [item.id, item]));
+  for (const item of project.registry) {
+    const row = document.createElement("tr");
+    addCell(row, item.name + " (" + item.id + ")");
+    addCell(row, item.annual2025 + " " + item.unit);
+    addCell(row, item.final + " " + item.unit);
+    addCell(row, item.evidence);
+    const source = document.createElement("a");
+    source.href = project.sources[item.source].url + "#page=" + item.page;
+    source.textContent = item.source + " p. " + item.page;
+    addCell(row, "").append(source);
+    el("registry").append(row);
+  }
+  el("project-summary").textContent = project.project.id + " · " + project.project.title +
+    " · " + registry.size + " published indicators loaded.";
+  el("registry-panel").hidden = false;
+  el("load-project").disabled = true;
+  resume();
+}
 function render(message) {
   const sample = samples[el("sample").value];
   el("status").textContent = message;
@@ -89,7 +135,21 @@ function render(message) {
     item.textContent = decision.actor + " · " + decision.action;
     el("log").append(item);
   }
-  el("capture").disabled = state !== "draft";
+  const item = registry?.get(sample.indicator);
+  if (item) {
+    const term = document.createElement("dt");
+    const definition = document.createElement("dd");
+    term.textContent = "Published FP251 basis";
+    definition.textContent = item.name + " · 2025 reported " + item.annual2025 + " " + item.unit +
+      " · final target " + item.final + " " + item.unit + " · APR p. " + item.page;
+    el("record").append(term, definition);
+  }
+  const records = Array.from(observations.values());
+  const verified = records.filter(record => record.status === "verified").length;
+  el("pack-summary").textContent = verified + " ready for exchange · " + (records.length - verified) +
+    " awaiting review or correction";
+  el("pack-export").disabled = records.length === 0;
+  el("capture").disabled = !project || state !== "draft";
   el("validate").disabled = state !== "submitted";
   el("independent").disabled = state !== "independent";
   el("export").disabled = state !== "verified";
@@ -97,14 +157,28 @@ function render(message) {
 function reset() {
   state = "draft";
   decisions = [];
-  render("Draft · Ready for collector submission.");
+  observations.delete(el("sample").value);
+  render(project ? "Draft · Ready for collector submission." : "Load the FP251 project to start.");
 }
 function transition(next, actor, action) {
   state = next;
   decisions.push({actor,action});
+  const sample = samples[el("sample").value];
+  observations.set(el("sample").value, makeRecord(sample));
   render(action);
 }
-el("sample").addEventListener("change", reset);
+function resume() {
+  const saved = observations.get(el("sample").value);
+  if (!saved) {
+    reset();
+    return;
+  }
+  state = saved.status;
+  decisions = [...saved.decisionHistory];
+  render(decisions.at(-1).action);
+}
+el("load-project").addEventListener("click", loadProject);
+el("sample").addEventListener("change", resume);
 el("reset").addEventListener("click", reset);
 el("capture").addEventListener("click", () => transition("submitted","Field collector","Submitted with evidence reference. Awaiting separate validation."));
 el("validate").addEventListener("click", () => {
@@ -118,18 +192,31 @@ el("validate").addEventListener("click", () => {
   }
 });
 el("independent").addEventListener("click", () => transition("verified","Independent verifier","Independent evidence review accepted. Eligible for the Output 4.5 handoff."));
-el("export").addEventListener("click", () => {
-  const sample = samples[el("sample").value];
-  const data = {demonstration:true, project:"FP251", sourceOutput:"4.4", targetOutput:"4.5",
+function makeRecord(sample) {
+  const entry = registry.get(sample.indicator);
+  const publishedIndicator = entry ? {...entry, sourceUrl:project.sources[entry.source].url} : null;
+  return {demonstration:true, observedData:"test", project:"FP251", sourceOutput:"4.4", targetOutput:"4.5",
     reportingPeriod:"2026-10", observationId:sample.code + "-2026-10", version:1,
-    status:state, indicator:sample.code, observation:sample.reading, evidenceReference:sample.evidence,
-    reviewTier:sample.tier, decisionHistory:decisions};
+    status:state, indicator:sample.code, publishedIndicator, observation:sample.reading,
+    evidenceReference:sample.evidence, reviewTier:sample.tier, decisionHistory:[...decisions]};
+}
+function download(data, filename) {
   const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], {type:"application/json"}));
   const link = document.createElement("a");
   link.href = url;
-  link.download = sample.code + "-verified-demo.json";
+  link.download = filename;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+el("export").addEventListener("click", () => {
+  const record = observations.get(el("sample").value);
+  download(record, record.indicator + "-verified-demo.json");
+});
+el("pack-export").addEventListener("click", () => {
+  const records = Array.from(observations.values());
+  download({demonstration:true, project:project.project, sources:project.sources, publishedRegistry:project.registry,
+    output45Exchange:records.filter(record => record.status === "verified"),
+    exceptionRegister:records.filter(record => record.status !== "verified")}, "FP251-Output-4.4-demo-reporting-pack.json");
 });
 reset();
 </script>
