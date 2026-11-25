@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BWA-IDBCS005 | GCFT MRV Demonstration</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6f4;color:#183638;font:1rem/1.55 system-ui,sans-serif}header{background:#123b40;color:#fff;padding:3rem 0}header a{color:#d2f4e6}h1,h2{font-family:Georgia,serif;line-height:1.14}h1{font-size:clamp(2.4rem,7vw,4.4rem);margin:.45em 0 .25em;max-width:19ch}h2{font-size:clamp(1.5rem,4vw,2.2rem);margin-top:0}.wrap{width:min(1060px,92%);margin:auto}header p{max-width:67ch}main{padding:1.6rem 0}.panel{background:#fff;border:1px solid #ccded8;border-radius:.7rem;padding:clamp(1rem,3vw,2rem);margin-bottom:1.3rem}.tag{font-size:.85rem;font-weight:bold;letter-spacing:.065em}a{color:#005d54;text-underline-offset:.17em}button,select{font:inherit;padding:.5rem .7rem;border-radius:.35rem;border:1px solid #52746e;margin:.2rem 0}button{background:#075a50;color:white;cursor:pointer}button:disabled{opacity:.54;cursor:default}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b67418;outline-offset:3px}label{display:block;font-weight:bold}select{max-width:100%;background:white;color:#183638}.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{padding:.65rem;text-align:left;vertical-align:top;border-bottom:1px solid #d5e2dd}thead{background:#e8f3ef}.status{background:#e8f3ef;padding:.8rem;border-left:4px solid #147266}dl{display:grid;grid-template-columns:minmax(8rem,1fr) 3fr;gap:.35rem .8rem}dt{font-weight:bold}dd{margin:0}@media(max-width:460px){dl{display:block}dd{margin-bottom:.55rem}}@media print{body,header{background:#fff;color:#111}header a{color:#005d54}button,select,label[for]{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a href="./">FP251 evaluation home</a>
+<p class="tag">BWA-IDBCS005 · BA-L1063 · OUTPUT 4.4</p>
+<h1>Monitoring, Reporting and Verification</h1>
+<p>GCFT proof of concept for the Barbados Climate Resilient South Coast Water Reclamation Project. Follow a field observation through quality checks, independent review and a proposed Output 4.5 handoff.</p>
+</div></header>
+<main class="wrap">
+<section class="panel" aria-labelledby="demo">
+<h2 id="demo">Run the verification workflow</h2>
+<p>Sample observations, limits, identities and indicator codes are illustrative. This browser demonstration simulates role separation, evidence review and export. Production controls, approved indicator rules and integration would be validated with BWA.</p>
+<label for="sample">Sample record</label>
+<select id="sample">
+<option value="quality">Water quality · laboratory result</option>
+<option value="quantity">Water quantity · reconciled meter readings</option>
+<option value="soil">Soil quality · missing custody evidence</option>
+<option value="climate">Climate · incomplete station series</option>
+<option value="commitment">Water Resilience Commitment · independent sign-off</option>
+</select>
+<dl id="record"></dl>
+<p class="status" id="status" role="status"></p>
+<div>
+<button id="capture" type="button">Submit as collector</button>
+<button id="validate" type="button">Review as validator</button>
+<button id="independent" type="button">Review as independent verifier</button>
+<button id="export" type="button">Download verified record</button>
+<button id="reset" type="button">Reset</button>
+</div>
+<h3>Decision log</h3><ol id="log"></ol>
+<noscript><p>Enable JavaScript to run the verification workflow.</p></noscript>
+</section>
+<section class="panel">
+<h2>Requirements and proposed acceptance evidence</h2>
+<div class="scroll" tabindex="0" aria-label="Requirements matrix"><table>
+<thead><tr><th scope="col">Notice requirement</th><th scope="col">GCFT delivery approach</th><th scope="col">Evidence for BWA acceptance</th></tr></thead>
+<tbody>
+<tr><th scope="row">Institutional and funder MRV design</th><td>Map owners, evidence and approval routes against the approved M&amp;E Plan, Indicator Registry and Results Matrix. Version definitions and map GCF and Debt-for-Climate reporting obligations.</td><td>Approved architecture, indicator dictionary and source-to-report crosswalk.</td></tr>
+<tr><th scope="row">Capture, consolidation and reporting</th><td>Ingest water quality, water quantity, soil quality and climate observations. Preserve source identifiers, units, timestamps, thresholds, reporting periods and supporting files. Configure the complementary GCF indicators and Water Resilience Commitments.</td><td>Reproducible test reports and reconciliation from original observations to aggregate values.</td></tr>
+<tr><th scope="row">Independent verification</th><td>Assign separate collector and validator roles. Apply automated checks and documentary review, then require independent verification when stipulated by the indicator's means of verification. Route exceptions for correction and resubmission.</td><td>Role-access tests, failed and successful test cases, and the decision history for each reported value.</td></tr>
+<tr><th scope="row">Output 4.5 interoperability</th><td>Use common indicator and observation identifiers. Send approved values with evidence references and version history. Reconcile receiver acknowledgements, rejects and duplicates.</td><td>Agreed interface contract and end-to-end test showing one current approved value per reporting key.</td></tr>
+<tr><th scope="row">Deployment, national compatibility and staff capacity</th><td>Agree the national MRV crosswalk where applicable. Test security, access, recovery and operations. Train operators, validators and administrators using role-based exercises.</td><td>User acceptance and recovery tests, administrator runbook, training records and handover sign-off.</td></tr>
+</tbody></table></div>
+</section>
+<section class="panel">
+<h2>Project and platform references</h2>
+<ul>
+<li><a href="https://gcftportal.org/wizard">GCFT project intake wizard</a></li>
+<li><a href="GCFT_FP251_dMRV.html">FP251 project demonstration</a></li>
+<li><a href="https://www.greenclimate.fund/portfolio/projects/fp251">Green Climate Fund FP251 project record</a></li>
+<li><a href="https://barbadoswaterauthority.com/wp-content/uploads/2026/11/BWA-REOI-MRV.pdf">Barbados Water Authority procurement notice</a></li>
+</ul>
+</section>
+</main>
+<script>
+const samples = {
+  quality: {code:"DEMO-WQ", reading:"Turbidity 1.1 NTU", evidence:"LAB-DEMO-017 · signed laboratory result", tier:"Documentary validation", exception:""},
+  quantity: {code:"DEMO-VOL", reading:"Reclaimed water 1,240 m³/day", evidence:"METER-DEMO-024 · reconciled daily meter readings", tier:"Documentary validation", exception:""},
+  soil: {code:"DEMO-SOIL", reading:"Electrical conductivity 2.4 dS/m", evidence:"LAB-DEMO-031 · custody form missing", tier:"Documentary validation", exception:"Missing chain-of-custody form."},
+  climate: {code:"DEMO-RAIN", reading:"Monthly rainfall 77 mm", evidence:"STATION-DEMO-042 · daily series", tier:"Documentary validation", exception:"Two required days are missing from the station series."},
+  commitment: {code:"DEMO-WRC", reading:"Pilot commissioning milestone recorded", evidence:"COMM-DEMO-053 · commissioning file and verifier checklist", tier:"Independent verification", exception:""}
+};
+const el = id => document.getElementById(id);
+let state;
+let decisions;
+function render(message) {
+  const sample = samples[el("sample").value];
+  el("status").textContent = message;
+  el("record").replaceChildren();
+  for (const [key, value] of Object.entries({"Indicator":sample.code,"Observation":sample.reading,"Evidence":sample.evidence,"Review tier":sample.tier})) {
+    const term = document.createElement("dt");
+    const definition = document.createElement("dd");
+    term.textContent = key;
+    definition.textContent = value;
+    el("record").append(term,definition);
+  }
+  el("log").replaceChildren();
+  for (const decision of decisions) {
+    const item = document.createElement("li");
+    item.textContent = decision.actor + " · " + decision.action;
+    el("log").append(item);
+  }
+  el("capture").disabled = state !== "draft";
+  el("validate").disabled = state !== "submitted";
+  el("independent").disabled = state !== "independent";
+  el("export").disabled = state !== "verified";
+}
+function reset() {
+  state = "draft";
+  decisions = [];
+  render("Draft · Ready for collector submission.");
+}
+function transition(next, actor, action) {
+  state = next;
+  decisions.push({actor,action});
+  render(action);
+}
+el("sample").addEventListener("change", reset);
+el("reset").addEventListener("click", reset);
+el("capture").addEventListener("click", () => transition("submitted","Field collector","Submitted with evidence reference. Awaiting separate validation."));
+el("validate").addEventListener("click", () => {
+  const sample = samples[el("sample").value];
+  if (sample.exception) {
+    transition("exception","BWA validator","Returned for correction. " + sample.exception);
+  } else if (sample.tier === "Independent verification") {
+    transition("independent","BWA validator","Documentary checks passed. Independent review is required before release.");
+  } else {
+    transition("verified","BWA validator","Documentary evidence accepted. Eligible for the Output 4.5 handoff.");
+  }
+});
+el("independent").addEventListener("click", () => transition("verified","Independent verifier","Independent evidence review accepted. Eligible for the Output 4.5 handoff."));
+el("export").addEventListener("click", () => {
+  const sample = samples[el("sample").value];
+  const data = {demonstration:true, project:"FP251", sourceOutput:"4.4", targetOutput:"4.5",
+    reportingPeriod:"2026-10", observationId:sample.code + "-2026-10", version:1,
+    status:state, indicator:sample.code, observation:sample.reading, evidenceReference:sample.evidence,
+    reviewTier:sample.tier, decisionHistory:decisions};
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], {type:"application/json"}));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = sample.code + "-verified-demo.json";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+reset();
+</script>
+</body>
+</html>
